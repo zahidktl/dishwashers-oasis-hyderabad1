@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Phone, Clock, Shield, Wrench, Check, MapPin, Star, Tool, Settings, AlertTriangle } from "lucide-react";
+import { Phone, Clock, Shield, Wrench, Check, MapPin, Star, Settings, AlertTriangle } from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -91,7 +91,7 @@ const Index = () => {
                 description: "Repair spray arms, water inlet issues, and detergent dispensers",
               },
               {
-                icon: Tool,
+                icon: Wrench,
                 title: "Strange Noises",
                 description: "Fix motor problems, loose components, and mechanical issues",
               },
