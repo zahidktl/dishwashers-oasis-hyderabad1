@@ -274,6 +274,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Disclaimer Section */}
+      <section className="py-8 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Disclaimer</h2>
+            <div className="space-y-4 text-gray-600 text-sm">
+              <p>
+                The information provided on this website is for general informational purposes only. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the services listed.
+              </p>
+              <p>
+                Any reliance you place on such information is strictly at your own risk. Prices mentioned are indicative and may vary based on the specific make, model, and condition of your appliance. Final pricing will be provided after inspection.
+              </p>
+              <p>
+                Service availability and response times may vary based on location and technician availability. Emergency services are subject to additional charges. Please contact our customer service for detailed information.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="container mx-auto text-center">
