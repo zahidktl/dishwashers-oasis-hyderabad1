@@ -10,10 +10,35 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Form submitted",
-      description: "We'll contact you shortly!",
-    });
+    
+    // Get form data
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    // Submit to FormSubmit.co
+    fetch("https://formsubmit.co/your-email@domain.com", {
+      method: "POST",
+      body: formData,
+    })
+      .then(response => {
+        if (response.ok) {
+          toast({
+            title: "Form submitted",
+            description: "We'll contact you shortly!",
+          });
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your form. Please try again.",
+          variant: "destructive"
+        });
+      });
   };
 
   return (
@@ -259,14 +284,24 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-xl">
           <h2 className="text-3xl font-bold text-center mb-12">Book a Service</h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+            action="https://formsubmit.co/your-email@domain.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New Service Booking Request" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value={window.location.href} />
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Input placeholder="Your Name" required />
-              <Input type="tel" placeholder="Phone Number" required />
+              <Input name="name" placeholder="Your Name" required />
+              <Input type="tel" name="phone" placeholder="Phone Number" required />
             </div>
-            <Input type="email" placeholder="Email Address" required />
-            <Input placeholder="Location in Hyderabad" required />
-            <Textarea placeholder="Describe your dishwasher issue" required />
+            <Input type="email" name="email" placeholder="Email Address" required />
+            <Input name="location" placeholder="Location in Hyderabad" required />
+            <Textarea name="message" placeholder="Describe your dishwasher issue" required />
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
               Schedule Service
             </Button>
