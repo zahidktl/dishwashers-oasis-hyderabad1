@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Phone, Clock, Shield, Tool, Check, MapPin } from "lucide-react";
+import { Phone, Clock, Shield, Wrench, Check, MapPin } from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -49,7 +49,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: Tool,
+                icon: Wrench,
                 title: "Repair Service",
                 description: "Expert repair for all dishwasher brands and models",
               },
