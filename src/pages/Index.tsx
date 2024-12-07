@@ -48,7 +48,7 @@ const Index = () => {
         <Phone className="inline-block mr-2 h-4 w-4" />
         <span>24/7 Emergency Service: </span>
         <a href="tel:+919876543210" className="font-bold hover:underline">
-          +91 987-654-3210
+          +91-9032478781
         </a>
       </div>
 
@@ -336,7 +336,7 @@ const Index = () => {
           <div className="flex justify-center space-x-4">
             <Phone className="h-5 w-5" />
             <a href="tel:+919876543210" className="hover:text-primary transition-colors">
-              +91 987-654-3210
+              +91-9032478781
             </a>
           </div>
         </div>
